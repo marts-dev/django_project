@@ -1,0 +1,146 @@
+[
+    {
+        "model": "agilelist.statement",
+        "pk": 1,
+        "fields": {
+            "title": "Individuals and Interactions Over Processes and Tools",
+            "definition": "Valuing people more highly than processes or tools is easy to understand because it is the people who respond to business needs and drive the development process. If the process or the tools drive development, the team is less responsive to change and less likely to meet customer needs. Communication is an example of the difference between valuing individuals versus process. In the case of individuals, communication is fluid and happens when a need arises. In the case of process, communication is scheduled and requires specific content.",
+            "category": "value"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 2,
+        "fields": {
+            "title": "Working Software Over Comprehensive Documentation",
+            "definition": "Historically, enormous amounts of time were spent on documenting the product for development and ultimate delivery. Technical specifications, technical requirements, technical prospectus, interface design documents, test plans, documentation plans, and approvals required for each. The list was extensive and was a cause for the long delays in development. Agile does not eliminate documentation, but it streamlines it in a form that gives the developer what is needed to do the work without getting bogged down in minutiae. Agile documents requirements as user stories, which are sufficient for a software developer to begin the task of building a new function.\r\nThe Agile Manifesto values documentation, but it values working software more.",
+            "category": "value"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 3,
+        "fields": {
+            "title": "Customer Collaboration Over Contract Negotiation",
+            "definition": "Negotiation is the period when the customer and the product manager work out the details of a delivery, with points along the way where the details may be renegotiated. Collaboration is a different creature entirely. With development models such as Waterfall, customers negotiate the requirements for the product, often in great detail, prior to any work starting. This meant the customer was involved in the process of development before development began and after it was completed, but not during the process. The Agile Manifesto describes a customer who is engaged and collaborates throughout the development process, making. This makes it far easier for development to meet their needs of the customer. Agile methods may include the customer at intervals for periodic demos, but a project could just as easily have an end-user as a daily part of the team and attending all meetings, ensuring the product meets the business needs of the customer.",
+            "category": "value"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 4,
+        "fields": {
+            "title": "Responding to Change Over Following a Plan",
+            "definition": "Traditional software development regarded change as an expense, so it was to be avoided. The intention was to develop detailed, elaborate plans, with a defined set of features and with everything, generally, having as high a priority as everything else, and with a large number of many dependencies on delivering in a certain order so that the team can work on the next piece of the puzzle.",
+            "category": "value"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 5,
+        "fields": {
+            "title": "Customer satisfaction through early and continuous software delivery",
+            "definition": "Customers are happier when they receive working software at regular intervals, rather than waiting extended periods of time between releases.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 6,
+        "fields": {
+            "title": "Accommodate changing requirements throughout the development process",
+            "definition": "The ability to avoid delays when a requirement or feature request changes.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 7,
+        "fields": {
+            "title": "Frequent delivery of working software",
+            "definition": "Scrum accommodates this principle since the team operates in software sprints or iterations that ensure regular delivery of working software.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 8,
+        "fields": {
+            "title": "Collaboration between the business stakeholders and developers throughout the project",
+            "definition": "Better decisions are made when the business and technical team are aligned.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 9,
+        "fields": {
+            "title": "Support, trust, and motivate the people involved",
+            "definition": "Motivated teams are more likely to deliver their best work than unhappy teams.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 10,
+        "fields": {
+            "title": "Enable face-to-face interactions",
+            "definition": "Communication is more successful when development teams are co-located.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 11,
+        "fields": {
+            "title": "Working software is the primary measure of progress",
+            "definition": "Delivering functional software to the customer is the ultimate factor that measures progress.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 12,
+        "fields": {
+            "title": "Agile processes to support a consistent development pace",
+            "definition": "Teams establish a repeatable and maintainable speed at which they can deliver working software, and they repeat it with each release.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 13,
+        "fields": {
+            "title": "Attention to technical detail and design enhances agility",
+            "definition": "The right skills and good design ensures the team can maintain the pace, constantly improve the product, and sustain change.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 14,
+        "fields": {
+            "title": "Simplicity",
+            "definition": "Develop just enough to get the job done for right now.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 15,
+        "fields": {
+            "title": "Self-organizing teams encourage great architectures, requirements, and designs",
+            "definition": "Skilled and motivated team members who have decision-making power, take ownership, communicate regularly with other team members, and share ideas that deliver quality products.",
+            "category": "principle"
+        }
+    },
+    {
+        "model": "agilelist.statement",
+        "pk": 16,
+        "fields": {
+            "title": "Regular reflections on how to become more effective",
+            "definition": "Self-improvement, process improvement, advancing skills, and techniques help team members work more efficiently.",
+            "category": "principle"
+        }
+    }
+]
