@@ -26,29 +26,6 @@ class StatementList(APIView):
         serializer = StatementSerializer(statements, many=True)
         return Response(serializer.data)
 
-    title_param = openapi.Parameter(
-        "title",
-        in_=openapi.IN_QUERY,
-        required=True,
-        description="Statement title",
-        type=openapi.TYPE_STRING,
-    )
-    definition_param = openapi.Parameter(
-        "definition",
-        in_=openapi.IN_QUERY,
-        required=True,
-        description="Statement definition",
-        type=openapi.TYPE_STRING,
-    )
-    category_param = openapi.Parameter(
-        "category",
-        in_=openapi.IN_QUERY,
-        required=True,
-        description="Statement definition",
-        type=openapi.TYPE_STRING,
-        enum=["value", "principle"],
-    )
-
     @swagger_auto_schema(
         operation_description="Create new statement",
         request_body=StatementSerializer,
