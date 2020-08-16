@@ -38,4 +38,4 @@ You should get the following result:
 
 9. You may run the app using: `poetry run python manage.py runserver`
 
-10. In your browser, you may into [localhost:8000/swagger](localhost:8000/swagger) to view the documentation
+10. In your browser, you may go to [localhost:8000/swagger](localhost:8000/swagger), to view the documentation
