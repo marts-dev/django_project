@@ -10,9 +10,9 @@ implemented using Django Rest Framework.
 ## Setting up the project locally
 After accomplishing the requirements above, you may proceed with the following steps in you terminal:
 1. Clone the project repository from github:
-`git clone <gitlink>`
+`git clone https://github.com/marts-dev/django_project.git`
 or
-[Download link](#)
+[Download link](https://github.com/marts-dev/django_project/archive/master.zip)
 2. Once done with retrieving the project files, enter the project folder:
 `cd django_project`
 3. Install the project dependencies by running the following command:
@@ -28,13 +28,13 @@ You can use it by issuing: `poetry run python generate_secret.py`
 6. Prepare the project database
 `poetry run python manage.py migrate`
 You get a result similar to the following:
-![migrate result](/djangoproject/screenshots/migrate.png)
+![migrate result](/djangobasics/screenshots/migrate.png)
 
 7. Create a super user for admin: `poetry run python manage.py createsuperuser`
 
 8. Populate the database: `poetry run python manage.py loaddata statements.json`
 You should get the following result:
-![loaddata result](/djangoproject/screenshots/loaddata.png)
+![loaddata result](/djangobasics/screenshots/loaddata.png)
 
 9. You may run the app using: `poetry run python manage.py runserver`
 
