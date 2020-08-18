@@ -48,8 +48,7 @@ Before runing any of the development tools like pytest, make sure you are inside
 - **Pytest** - to run your tests<br>
 `poetry run pytest`
 <br>
-You may also select specific test sets: [`statementmodels`, `agilelinks`, `getmethods`, `writemethods`]
-<br>
+You may also select specific test sets: [`statementmodels`, `agilelinks`, `getmethods`, `writemethods`]<br>
 Ex: `poetry run pytest -m getmethods`
 - **mypy** - to type hint your code<br>
 `poetry run mypy agilelist`
