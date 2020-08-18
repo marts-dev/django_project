@@ -17,7 +17,8 @@ or
 `cd django_project`
 3. Install the project dependencies by running the following command:
 `poetry install`
-4. Change directory to `./djangobasics/djangobasics`
+4. Change directory to **./djangobasics/djangobasics**<br>
+`cd djangobasics\djangobasics`
 5. Create a **.env** file with the following contents:
 > SECRET_KEY=secret key<br>
 > DATABASE_NAME=db.sqlite3
@@ -25,8 +26,8 @@ or
 **Note:** Replace the value of secret key with the output of the **generate_secret.py**.
 You can use it by issuing: `poetry run python generate_secret.py`
 
-6. Prepare the project database
-`poetry run python manage.py migrate`
+6. Prepare the project database, go back one directory level using `cd ..` then execute the following:<br>
+`poetry run python manage.py migrate`<br>
 You get a result similar to the following:
 ![migrate result](/djangobasics/screenshots/migrate.png)
 
