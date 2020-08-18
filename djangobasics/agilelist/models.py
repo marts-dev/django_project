@@ -6,7 +6,10 @@ from django.utils.translation import gettext_lazy as _
 def validate_category(category: str):
     if category != "value" and category != "principle":
         raise ValidationError(
-            _("%(category)s is not valid, valid values are 'value' or 'principle'"),
+            _(
+                "%(category)s is not valid, \
+            values are 'value' or 'principle'"
+            ),
             params={"category": category},
         )
 

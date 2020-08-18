@@ -1,7 +1,5 @@
 import factory
 
-from agilelist.models import Statement
-
 
 class StatementFactory(factory.django.DjangoModelFactory):
     class Meta:

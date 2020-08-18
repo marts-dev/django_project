@@ -19,10 +19,10 @@ or
 `poetry install`
 4. Change directory to `./djangobasics/djangobasics`
 5. Create a **.env** file with the following contents:
-> SECRET_KEY=secret key
+> SECRET_KEY=secret key<br>
 > DATABASE_NAME=db.sqlite3
 
-**Note:** Replace the value of secret key with output of the generate_secret.py.
+**Note:** Replace the value of secret key with the output of the **generate_secret.py**.
 You can use it by issuing: `poetry run python generate_secret.py`
 
 6. Prepare the project database
@@ -31,6 +31,7 @@ You get a result similar to the following:
 ![migrate result](/djangobasics/screenshots/migrate.png)
 
 7. Create a super user for admin: `poetry run python manage.py createsuperuser`
+<br>**Note:** Supply the appropriate info based on the prompt
 
 8. Populate the database: `poetry run python manage.py loaddata statements.json`
 You should get the following result:
@@ -39,3 +40,21 @@ You should get the following result:
 9. You may run the app using: `poetry run python manage.py runserver`
 
 10. In your browser, you may go to [localhost:8000/swagger](localhost:8000/swagger), to view the documentation
+
+## Running the development tools
+Before runing any of the development tools like pytest, make sure you are inside **.\django_project\djangobasics** directory **manage.py** resides.
+<br>
+- **Pytest** - to run your tests<br>
+`poetry run pytest`
+<br>
+You may also select specific test sets: [`statementmodels`, `agilelinks`, `getmethods`, `writemethods`]
+<br>
+Ex: `poetry run pytest -m getmethods`
+- **mypy** - to type hint your code<br>
+`poetry run mypy agilelist`
+- **black** - to format your code<br>
+`poetry run black agilelist`
+- **flake8** - to check pep8 rules<br>
+`poetry run flake8 agilelist`
+- **bandit** - a tool designed to find common security issues in Python code<br>
+`poetry run bandit -r agilelist`
