@@ -1,7 +1,6 @@
 from django.http import Http404
-from rest_framework import status
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from django.utils.decorators import method_decorator
+from rest_framework import viewsets
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from agilelist.models import Statement
@@ -9,94 +8,42 @@ from agilelist.serializers import StatementSerializer
 from drf_yasg.utils import swagger_auto_schema
 
 
-class StatementList(APIView):
+class StatementViewSet(viewsets.ModelViewSet):
+    queryset = Statement.objects.all()
+    serializer_class = StatementSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-    @swagger_auto_schema(
-        operation_description="Retrieve all statements",
+
+@method_decorator(
+    name="list",
+    decorator=swagger_auto_schema(
+        operation_description="Retrieve value statements",
         responses={200: StatementSerializer(many=True)},
-    )
-    def get(self, request) -> Response:
-        statements = Statement.objects.all()
-        serializer = StatementSerializer(statements, many=True)
-        return Response(serializer.data)
+    ),
+)
+class ValueList(viewsets.ReadOnlyModelViewSet):
+    serializer_class = StatementSerializer
 
-    @swagger_auto_schema(
-        operation_description="Create new statement", request_body=StatementSerializer,
-    )
-    def post(self, request) -> Response:
-        serializer = StatementSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-class StatementDetail(APIView):
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticatedOrReadOnly]
-
-    def get_object(self, pk: int):
-        # Can be refactored with django.shortcuts
-        try:
-            return Statement.objects.get(pk=pk)
-        except Statement.DoesNotExist:
-            raise Http404
-
-    @swagger_auto_schema(operation_description="Retrieve a single statement",)
-    def get(self, request, pk: int) -> Response:
-        statement = self.get_object(pk)
-        serializer = StatementSerializer(statement)
-        return Response(serializer.data)
-
-    @swagger_auto_schema(
-        operation_description="Update statement", request_body=StatementSerializer,
-    )
-    def put(self, request, pk: int) -> Response:
-        statement = self.get_object(pk)
-        serializer = StatementSerializer(statement, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    @swagger_auto_schema(operation_description="Delete statement",)
-    def delete(self, request, pk: int) -> Response:
-        statement = self.get_object(pk)
-        statement.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-class ValueList(APIView):
-    def get_values(self):
+    def get_queryset(self):
         try:
             return Statement.objects.all().filter(category="value")
         except Statement.DoesNotExist:
             raise Http404
 
-    @swagger_auto_schema(
-        operation_description="Retrieve value statements",
+
+@method_decorator(
+    name="list",
+    decorator=swagger_auto_schema(
+        operation_description="Retrieve principle statements",
         responses={200: StatementSerializer(many=True)},
-    )
-    def get(self, request) -> Response:
-        statement = self.get_values()
-        serializer = StatementSerializer(statement, many=True)
-        return Response(serializer.data)
+    ),
+)
+class PrincipleList(viewsets.ReadOnlyModelViewSet):
+    serializer_class = StatementSerializer
 
-
-class PrincipleList(APIView):
-    def get_principles(self):
+    def get_queryset(self):
         try:
             return Statement.objects.all().filter(category="principle")
         except Statement.DoesNotExist:
             raise Http404
-
-    @swagger_auto_schema(
-        operation_description="Retrieve principle statements",
-        responses={200: StatementSerializer(many=True)},
-    )
-    def get(self, request) -> Response:
-        statement = self.get_principles()
-        serializer = StatementSerializer(statement, many=True)
-        return Response(serializer.data)

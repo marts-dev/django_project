@@ -1,11 +1,12 @@
-from django.urls import path
-
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from agilelist import views
 
+router = DefaultRouter()
+router.register("", views.StatementViewSet)
+router.register("values", views.ValueList, basename="values")
+router.register("principles", views.PrincipleList, basename="principles")
+
 app_name = "agilelist"
-urlpatterns = [
-    path("statements/", views.StatementList.as_view(), name="list"),
-    path("statements/<int:pk>/", views.StatementDetail.as_view(), name="detail"),
-    path("statements/values/", views.ValueList.as_view(), name="values"),
-    path("statements/principles/", views.PrincipleList.as_view(), name="principles"),
-]
+
+urlpatterns = [path("statements/", include(router.urls))]
