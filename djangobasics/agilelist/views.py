@@ -8,6 +8,22 @@ from agilelist.serializers import StatementSerializer
 from drf_yasg.utils import swagger_auto_schema
 
 
+@method_decorator(
+    name="create",
+    decorator=swagger_auto_schema(
+        operation_description="Create a statement", request_body=StatementSerializer,
+    ),
+)
+@method_decorator(
+    name="update",
+    decorator=swagger_auto_schema(
+        operation_description="Update a statement", request_body=StatementSerializer,
+    ),
+)
+@method_decorator(
+    name="destroy",
+    decorator=swagger_auto_schema(operation_description="Delete a statement",),
+)
 class StatementViewSet(viewsets.ModelViewSet):
     queryset = Statement.objects.all()
     serializer_class = StatementSerializer
@@ -22,7 +38,7 @@ class StatementViewSet(viewsets.ModelViewSet):
         responses={200: StatementSerializer(many=True)},
     ),
 )
-class ValueList(viewsets.ReadOnlyModelViewSet):
+class ValueViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = StatementSerializer
 
     def get_queryset(self):
@@ -39,7 +55,7 @@ class ValueList(viewsets.ReadOnlyModelViewSet):
         responses={200: StatementSerializer(many=True)},
     ),
 )
-class PrincipleList(viewsets.ReadOnlyModelViewSet):
+class PrincipleViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = StatementSerializer
 
     def get_queryset(self):
